@@ -1,0 +1,25 @@
+{
+  "name": "basic_informational_site",
+  "version": "1.0.0",
+  "description": "First time working with NodeJS webserver that will serve the  right page according to the url.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daygoDao/basic_informational_site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daygoDao/basic_informational_site/issues"
+  },
+  "homepage": "https://github.com/daygoDao/basic_informational_site#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

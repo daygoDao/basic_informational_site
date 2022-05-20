@@ -1,5 +1,6 @@
 const http = require("http");
-const fs = require('fs')
+const fs = require("fs");
+const path = require("path");
 
 console.log("yo from app.js");
 const hostname = "127.0.0.1";
@@ -7,15 +8,25 @@ const port = 8080;
 
 const server = http.createServer((req, res) => {
   const { header, method, url } = req;
-  let body = [];
   console.log(url);
+
   if (req.url === "/") {
-    res.write("Hello from / directory");
-    res.end();
+    fs.readFile(
+      path.join(__dirname, "./", "index.html"),
+      "utf8",
+      (err, data) => {
+        if (err) throw err;
+
+        console.log(data);
+
+        res.write(data);
+        res.end();
+      }
+    );
   }
-  if (req.url === '/about') {
-      res.write(JSON.stringify( [1, 2, 3] ));
-      res.end();
+  if (req.url === "/about") {
+    res.write(JSON.stringify([1, 2, 3]));
+    res.end();
   }
 });
 

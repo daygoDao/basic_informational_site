@@ -23,10 +23,32 @@ const server = http.createServer((req, res) => {
         res.end();
       }
     );
-  }
-  if (req.url === "/about") {
-    res.write(JSON.stringify([1, 2, 3]));
-    res.end();
+  } else if (req.url === "/about") {
+    fs.readFile(
+      path.join(__dirname, "./", "about.html"),
+      "utf8",
+      (err, data) => {
+        if (err) throw err;
+
+        console.log(data);
+
+        res.write(data);
+        res.end();
+      }
+    );
+  } else {
+    fs.readFile(
+      path.join(__dirname, "./", "404.html"),
+      "utf8",
+      (err, data) => {
+        if (err) throw err;
+
+        console.log(data);
+
+        res.write(data);
+        res.end();
+      }
+    );
   }
 });
 

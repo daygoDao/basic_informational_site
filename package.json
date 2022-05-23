@@ -4,7 +4,7 @@
   "description": "First time working with NodeJS webserver that will serve the  right page according to the url.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",

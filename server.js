@@ -1,6 +1,14 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  console.log('here');
+  res.status(200).json({message: "error"});
+})
+app.listen(3000);
 
 console.log("yo from app.js");
 const hostname = "127.0.0.1";
